@@ -8,9 +8,17 @@ public class SpawnPlayer : MonoBehaviour
     public GameObject[] spawnPoints;
     public void Start()
     {
-        int randomNumber = 0;
-        Vector2 spawnPoint = spawnPoints[randomNumber].GetComponent<Transform>().position;
-        PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint, Quaternion.identity);
-        randomNumber++;
+
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        {
+            Vector2 spawnPoint1 = spawnPoints[0].GetComponent<Transform>().position;
+            PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint1, Quaternion.identity);
+        }
+
+        else
+        {
+            Vector2 spawnPoint2 = spawnPoints[1].GetComponent<Transform>().position;
+            PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint2, Quaternion.identity);
+        }
     }
 }
