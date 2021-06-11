@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 5189162498044513333}
   - component: {fileID: 3278365966513747758}
   - component: {fileID: -53675030276409356}
-  - component: {fileID: 2768035404221950036}
-  - component: {fileID: 4400972769222704367}
+  - component: {fileID: 9013712722024817036}
+  - component: {fileID: 2272799172179097536}
+  - component: {fileID: 6057105148905445784}
+  - component: {fileID: -9011122385688226533}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -105,11 +107,27 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 9013712722024817036}
+  - {fileID: -9011122385688226533}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!50 &2768035404221950036
+--- !u!114 &9013712722024817036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806437698434567622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b67bf2c51878dc4f8bc92c99434810c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pv: {fileID: 0}
+  moveSpeed: 10
+  jumpforce: 800
+--- !u!50 &2272799172179097536
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -124,13 +142,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4400972769222704367
+--- !u!58 &6057105148905445784
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,3 +164,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-9011122385688226533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806437698434567622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
