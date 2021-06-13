@@ -1,0 +1,565 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.3f1 (4bef613afd59) revision 4976481'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19041.1052; Version 2004; 64bit' Language: 'en' Physical Memory: 16321 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\2021.1.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Studium/6.Semster/Fachprojekt/HauptProjektLast
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+54475
+Successfully changed project path to: D:/Studium/6.Semster/Fachprojekt/HauptProjektLast
+D:/Studium/6.Semster/Fachprojekt/HauptProjektLast
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 112.17 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.3f1 (4bef613afd59)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/2021.1.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Studium/6.Semster/Fachprojekt/HauptProjektLast/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1c03)
+    Vendor:   NVIDIA
+    VRAM:     6052 MB
+    Driver:   27.21.14.6140
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/2021.1.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/2021.1.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/2021.1.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56948
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/2021.1.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001870 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 218.01 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.438 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004296 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 101.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.134 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3643 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139.6 MB.
+System memory in use after: 139.7 MB.
+
+Unloading 35 unused Assets to reduce memory usage. Loaded Objects now: 4097.
+Total: 2.735400 ms (FindLiveObjects: 0.274400 ms CreateObjectMapping: 0.209600 ms MarkObjects: 2.125900 ms  DeleteObjects: 0.124400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003532 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.982 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 138.2 MB.
+System memory in use after: 138.3 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4102.
+Total: 2.606600 ms (FindLiveObjects: 0.394600 ms CreateObjectMapping: 0.252500 ms MarkObjects: 1.852100 ms  DeleteObjects: 0.106200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/PlayerMovements.cs
+  artifactKey: Guid(6b67bf2c51878dc4f8bc92c99434810c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerMovements.cs using Guid(6b67bf2c51878dc4f8bc92c99434810c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8428c9f3eadd6aa197cda88cddf7df13') in 0.029505 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003630 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.978 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 138.3 MB.
+System memory in use after: 138.4 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4107.
+Total: 2.971700 ms (FindLiveObjects: 0.331000 ms CreateObjectMapping: 0.274600 ms MarkObjects: 2.259200 ms  DeleteObjects: 0.105800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.628273 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e35c5b08f01f3a3dfd1269e3c2beadb') in 0.088999 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003717 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.018 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.5 MB.
+System memory in use after: 142.6 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4119.
+Total: 2.424500 ms (FindLiveObjects: 0.252600 ms CreateObjectMapping: 0.178000 ms MarkObjects: 1.898500 ms  DeleteObjects: 0.094200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.787572 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5972aede9b66c4b75db6ae7d80447d2d') in 0.054497 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004280 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.044 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.5 MB.
+System memory in use after: 142.6 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4125.
+Total: 2.498300 ms (FindLiveObjects: 0.282700 ms CreateObjectMapping: 0.221600 ms MarkObjects: 1.890400 ms  DeleteObjects: 0.102100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003467 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.943 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.5 MB.
+System memory in use after: 142.6 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4130.
+Total: 2.795400 ms (FindLiveObjects: 0.264100 ms CreateObjectMapping: 0.393300 ms MarkObjects: 2.027600 ms  DeleteObjects: 0.109200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003567 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.012 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.5 MB.
+System memory in use after: 142.6 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4135.
+Total: 2.360500 ms (FindLiveObjects: 0.251800 ms CreateObjectMapping: 0.175500 ms MarkObjects: 1.834300 ms  DeleteObjects: 0.098000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 49.645692 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a98f0480cecb986401b3e92d4b89a57f') in 0.054205 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003737 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.81 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.017 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.6 MB.
+System memory in use after: 142.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4141.
+Total: 2.614200 ms (FindLiveObjects: 0.328400 ms CreateObjectMapping: 0.239300 ms MarkObjects: 1.951400 ms  DeleteObjects: 0.094200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003852 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.940 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.6 MB.
+System memory in use after: 142.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4146.
+Total: 3.140200 ms (FindLiveObjects: 0.302300 ms CreateObjectMapping: 0.210800 ms MarkObjects: 2.525200 ms  DeleteObjects: 0.100700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 64.299361 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca0157d9f3c8b7e30376486f44a9999d') in 0.053148 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003792 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.011 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.6 MB.
+System memory in use after: 142.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4152.
+Total: 3.036100 ms (FindLiveObjects: 0.272100 ms CreateObjectMapping: 0.213800 ms MarkObjects: 2.435600 ms  DeleteObjects: 0.113300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.029920 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '310dd3556a7b168deee56072be1c3505') in 0.056272 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004046 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.059 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.6 MB.
+System memory in use after: 142.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4158.
+Total: 2.269000 ms (FindLiveObjects: 0.245600 ms CreateObjectMapping: 0.163000 ms MarkObjects: 1.764600 ms  DeleteObjects: 0.094800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.665424 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6995c290837e760b5c8b0fe3d24890e1') in 0.052790 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003843 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.016 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.20 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.6 MB.
+System memory in use after: 142.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4164.
+Total: 2.355400 ms (FindLiveObjects: 0.254300 ms CreateObjectMapping: 0.179800 ms MarkObjects: 1.822100 ms  DeleteObjects: 0.097800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.042711 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a6931f483c9b1ed36cee188b62d4e27') in 0.054343 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003766 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.019 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.6 MB.
+System memory in use after: 142.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4170.
+Total: 2.880800 ms (FindLiveObjects: 0.275100 ms CreateObjectMapping: 0.205900 ms MarkObjects: 2.279100 ms  DeleteObjects: 0.119800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003679 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.932 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.6 MB.
+System memory in use after: 142.7 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4175.
+Total: 2.406100 ms (FindLiveObjects: 0.277000 ms CreateObjectMapping: 0.186000 ms MarkObjects: 1.842500 ms  DeleteObjects: 0.099600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.633366 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd896548613bee3bb5beceaccf9446a3a') in 0.058671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.095571 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2be9c643277de597b692ff73a77b19f2') in 0.008971 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003597 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.000 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4181.
+Total: 2.664400 ms (FindLiveObjects: 0.266200 ms CreateObjectMapping: 0.204800 ms MarkObjects: 2.092000 ms  DeleteObjects: 0.100200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.501175 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e347d01f8043faef5ae96ef11a101e7f') in 0.053529 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003549 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.041 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4187.
+Total: 2.352900 ms (FindLiveObjects: 0.254900 ms CreateObjectMapping: 0.170300 ms MarkObjects: 1.827900 ms  DeleteObjects: 0.099000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.971641 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc51feda15caa41592f7904a27b58f3f') in 0.056020 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.973125 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2a30704bf9b3b7671ac73dfc32c9e47') in 0.007310 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003777 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.010 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.81 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4193.
+Total: 2.854800 ms (FindLiveObjects: 0.261500 ms CreateObjectMapping: 0.205300 ms MarkObjects: 2.279800 ms  DeleteObjects: 0.107200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.762023 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aae784b9dc0e112f3558e332abe22ce7') in 0.054830 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004036 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.023 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4199.
+Total: 2.999500 ms (FindLiveObjects: 0.368600 ms CreateObjectMapping: 0.330300 ms MarkObjects: 2.194000 ms  DeleteObjects: 0.105400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.408659 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e27a723c6f6564cdfbed3be451d1ab') in 0.057682 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003943 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.061 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4205.
+Total: 2.934300 ms (FindLiveObjects: 0.351200 ms CreateObjectMapping: 0.269400 ms MarkObjects: 2.196800 ms  DeleteObjects: 0.116000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003837 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.019 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4210.
+Total: 2.708300 ms (FindLiveObjects: 0.306600 ms CreateObjectMapping: 0.245700 ms MarkObjects: 2.051500 ms  DeleteObjects: 0.103600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.269956 seconds.
+  path: Assets/Resources/Circle.prefab
+  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61b35fc2cbb19617414f19623ed89b5f') in 0.055651 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003911 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.008 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3624 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 4216.
+Total: 3.406900 ms (FindLiveObjects: 0.364900 ms CreateObjectMapping: 0.363400 ms MarkObjects: 2.575400 ms  DeleteObjects: 0.102100 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
