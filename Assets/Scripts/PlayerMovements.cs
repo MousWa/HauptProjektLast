@@ -8,7 +8,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 {
     public PhotonView pv;
 
-    public int moveSpeed = 1;
+    public int moveSpeed = 50;
     public int jumpforce = 50;
 
     private bool IsGrounded;
@@ -39,8 +39,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
     private void ProcessInputs()
     {
-        var move = new Vector3(Input.GetAxisRaw("Horizontal"), 0);
-        transform.position += move * moveSpeed * Time.deltaTime;
+        float move = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(move*moveSpeed, rb.velocity.y);
 
         if (Input.GetKeyDown(KeyCode.Space)&& IsGrounded)
         {
