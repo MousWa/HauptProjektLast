@@ -15,11 +15,11 @@ C:/Users/me/OneDrive/Desktop/00/DET/Hauptprojekt/HauptProjektLast
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50198
+59926
 Successfully changed project path to: C:/Users/me/OneDrive/Desktop/00/DET/Hauptprojekt/HauptProjektLast
 C:/Users/me/OneDrive/Desktop/00/DET/Hauptprojekt/HauptProjektLast
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 84.83 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 80.46 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.3f1 (4bef613afd59)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/2021.1.3f1/Editor/Data/Resources/UnitySubsystems
@@ -35,98 +35,290 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/2021.1.3f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/2021.1.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/2021.1.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56684
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/2021.1.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001246 seconds.
+Registered in 0.001439 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.96 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 90.06 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.939 seconds
+- Completed reload, in  0.979 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003451 seconds.
+Registered in 0.003522 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 82.61 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 84.27 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.927 seconds
+- Completed reload, in  0.930 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.71 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3643 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 138.0 MB.
-System memory in use after: 138.2 MB.
+System memory in use before: 138.5 MB.
+System memory in use after: 138.8 MB.
 
-Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 4095.
-Total: 2.046700 ms (FindLiveObjects: 0.253200 ms CreateObjectMapping: 0.157300 ms MarkObjects: 1.589800 ms  DeleteObjects: 0.045700 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Game Manager.prefab
-  artifactKey: Guid(cfbd4825a0fbb674497b05a7d1d0e902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Game Manager.prefab using Guid(cfbd4825a0fbb674497b05a7d1d0e902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '165dbd9e96b871c39597d8a86d646f89') in 0.035499 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 126.984698 seconds.
-  path: Assets/Scenes
-  artifactKey: Guid(dbb018907c8b81e4bb93b3068fbccaa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(dbb018907c8b81e4bb93b3068fbccaa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b01fd385d7efa1690c475813192cf22') in 0.004691 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.097814 seconds.
-  path: Assets/Scenes/Loading.unity
-  artifactKey: Guid(a33eb3436be50c54ca925e48cc6528d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Loading.unity using Guid(a33eb3436be50c54ca925e48cc6528d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '447a60c53191ea43e58996b3c4af220a') in 0.005031 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003231 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.797 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.62 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 136.1 MB.
-System memory in use after: 136.3 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4100.
-Total: 2.067500 ms (FindLiveObjects: 0.303100 ms CreateObjectMapping: 0.190200 ms MarkObjects: 1.557200 ms  DeleteObjects: 0.016000 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003299 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.781 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 136.2 MB.
-System memory in use after: 136.4 MB.
-
-Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4105.
-Total: 1.936800 ms (FindLiveObjects: 0.224900 ms CreateObjectMapping: 0.151500 ms MarkObjects: 1.544700 ms  DeleteObjects: 0.015000 ms)
+Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 4097.
+Total: 2.041000 ms (FindLiveObjects: 0.247900 ms CreateObjectMapping: 0.162700 ms MarkObjects: 1.585600 ms  DeleteObjects: 0.044300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 93.643036 seconds.
   path: Assets/Resources/Circle.prefab
-  artifactKey: Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Resources/Circle.prefab using Guid(3ee0dd3eac314c14e8a06dad78d8949c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cf78f723fff6f203ab299850ca86abf') in 0.070700 seconds 
+  artifactKey: Guid(b0006ca0998550e429511bb0a6f9cf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Circle.prefab using Guid(b0006ca0998550e429511bb0a6f9cf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44cd78055cbe81b0087e21954cb8bd78') in 0.072234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 479.795807 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Circle.png
+  artifactKey: Guid(a86470a33a6bf42c4b3595704624658b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Circle.png using Guid(a86470a33a6bf42c4b3595704624658b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a6e51cce55573b970d8f16577d3b8e') in 0.043934 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.797839 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91ad1561c16fa912f968b0e5de4e6eac') in 0.059447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.045552 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4aee049a042046d5bfa18435fa5436c') in 0.042437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 85.194371 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(177971674b11af74abc3934f0ea92c92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(177971674b11af74abc3934f0ea92c92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aef84a541f7827513f2b6c38e9cbfeb9') in 0.001995 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 70.788610 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63ac8ba5bf31d8f2de6523187be98fc5') in 0.035079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.056815 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be92944149482e1a219691069cbf13b3') in 0.035143 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003294 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.774 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3620 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.4 MB.
+System memory in use after: 141.6 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4126.
+Total: 2.043000 ms (FindLiveObjects: 0.259800 ms CreateObjectMapping: 0.146300 ms MarkObjects: 1.591100 ms  DeleteObjects: 0.045200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003131 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.764 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.4 MB.
+System memory in use after: 141.6 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4131.
+Total: 1.947200 ms (FindLiveObjects: 0.226900 ms CreateObjectMapping: 0.139600 ms MarkObjects: 1.566100 ms  DeleteObjects: 0.014100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 97.899379 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb4a416d591abb691c0f4feae5575d7e') in 0.071829 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 79.752280 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4ef8db8dd966977009e0b19f2167aa6') in 0.032283 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.367826 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b33862b1c26d74d180bac86acd5d55e') in 0.032466 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.305007 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3848215dffa54d9e1d2274bc272f5b66') in 0.034661 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004003 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.853 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.5 MB.
+System memory in use after: 141.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4137.
+Total: 2.296200 ms (FindLiveObjects: 0.242600 ms CreateObjectMapping: 0.171500 ms MarkObjects: 1.867300 ms  DeleteObjects: 0.014200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 82.877067 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '040cecdbf4f4e4a384e87705018fb58c') in 0.070273 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003683 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.854 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.5 MB.
+System memory in use after: 141.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4143.
+Total: 2.189400 ms (FindLiveObjects: 0.271500 ms CreateObjectMapping: 0.182600 ms MarkObjects: 1.719800 ms  DeleteObjects: 0.014700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003283 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.844 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.70 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.5 MB.
+System memory in use after: 141.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4148.
+Total: 2.271000 ms (FindLiveObjects: 0.239600 ms CreateObjectMapping: 0.193700 ms MarkObjects: 1.821600 ms  DeleteObjects: 0.015100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.401541 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca7e61b17be49f831dcf04327545e9c3') in 0.070927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.320118 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '202950da1e2a7fbac15dd95fbf706572') in 0.033294 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003608 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.67 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.852 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.5 MB.
+System memory in use after: 141.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4154.
+Total: 2.225000 ms (FindLiveObjects: 0.264700 ms CreateObjectMapping: 0.218200 ms MarkObjects: 1.726900 ms  DeleteObjects: 0.014600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003344 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.835 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.72 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.5 MB.
+System memory in use after: 141.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4159.
+Total: 2.296300 ms (FindLiveObjects: 0.289900 ms CreateObjectMapping: 0.237500 ms MarkObjects: 1.753300 ms  DeleteObjects: 0.014800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.848833 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e1d88c427f602747c0a09a89ff5b40b') in 0.078023 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003323 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.65 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.839 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3619 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 141.5 MB.
+System memory in use after: 141.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 4165.
+Total: 2.389600 ms (FindLiveObjects: 0.271300 ms CreateObjectMapping: 0.254100 ms MarkObjects: 1.849300 ms  DeleteObjects: 0.013700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.222771 seconds.
+  path: Assets/Resources/Rogue_06.prefab
+  artifactKey: Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Rogue_06.prefab using Guid(e22d553faffb62249ab650f08c2e33d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f175d56dd400eb918c569288aebe6925') in 0.082530 seconds 
