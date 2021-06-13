@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 2075189641432181614}
-  moveSpeed: 5
+  moveSpeed: 500
   jumpforce: 360
 --- !u!1 &5337585185694030518
 GameObject:
