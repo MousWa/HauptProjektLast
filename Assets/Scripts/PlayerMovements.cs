@@ -15,14 +15,24 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private Rigidbody2D rb;
     private Vector3 smoothMove;
 
-
+    private Animator animator;
     private void Start()
     {
+        animator = GetComponent<Animator>();
+        if (!animator)
+        {
+            Debug.LogError("PlayerAnimatorManager is Missing Animator Component", this);
+        }
         rb = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
-        if(photonView.IsMine)
+        if (!animator)
+        {
+            return;
+        }
+     
+        if (photonView.IsMine)
         {
             ProcessInputs();
         }
@@ -39,6 +49,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
     private void ProcessInputs()
     {
+        float h = Input.GetAxis("Horizontal");
+        animator.SetBool("IsRun", h != 0);
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move*moveSpeed, rb.velocity.y);
 
