@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using System;
 
-public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
+public class PlayerMovements : MonoBehaviourPunCallbacks, IPunObservable
 {
     public PhotonView pv;
 
@@ -22,7 +22,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
     private void Update()
     {
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             ProcessInputs();
         }
@@ -40,9 +40,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private void ProcessInputs()
     {
         float move = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(move*moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space)&& IsGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
             Jump();
         }
@@ -73,7 +73,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        if(stream.IsWriting)
+        if (stream.IsWriting)
         {
             stream.SendNext(transform.position);
         }
