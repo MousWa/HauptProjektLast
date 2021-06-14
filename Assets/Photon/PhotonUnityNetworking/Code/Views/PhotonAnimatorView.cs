@@ -14,7 +14,7 @@ namespace Photon.Pun
     using System.Collections.Generic;
     using UnityEngine;
 
-
+    
     /// <summary>
     /// This class helps you to synchronize Mecanim animations
     /// Simply add the component to your GameObject and make sure that
@@ -28,8 +28,8 @@ namespace Photon.Pun
     public class PhotonAnimatorView : MonoBehaviourPun, IPunObservable
     {
         #region Enums
-
-        public enum ParameterType
+    
+            public enum ParameterType
         {
             Float = 1,
             Int = 3,
@@ -145,6 +145,7 @@ namespace Photon.Pun
             }
             else
             {
+
                 this.DeserializeDataContinuously();
             }
         }
