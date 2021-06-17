@@ -8,7 +8,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 {
     public PhotonView pv;
 
-    public int moveSpeed = 50;
+    public float moveSpeed = 50;
     public int jumpforce = 50;
 
     private bool IsGrounded;
@@ -81,6 +81,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
     void Jump()
     {
+      
         rb.AddForce(Vector2.up * jumpforce);
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)

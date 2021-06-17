@@ -821,6 +821,7 @@ GameObject:
   - component: {fileID: 1667841212080150921}
   - component: {fileID: 2075189641432181614}
   - component: {fileID: 6223933010554242635}
+  - component: {fileID: -7820756132329221844}
   m_Layer: 0
   m_Name: Rogue_06
   m_TagString: Untagged
@@ -853,7 +854,7 @@ Animator:
   m_GameObject: {fileID: 4305985171774103076}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3f91ccc83710e0140844bbc6f2ff40a4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 817961bd08d27cf4a91ec91e99149091, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1014,8 +1015,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: {fileID: 2075189641432181614}
-  moveSpeed: 4
+  moveSpeed: 2.83
   jumpforce: 360
+--- !u!114 &-7820756132329221844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4305985171774103076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsRun
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &5337585185694030518
 GameObject:
   m_ObjectHideFlags: 0
