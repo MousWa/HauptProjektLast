@@ -36,7 +36,7 @@ public class SpawnPlayer : MonoBehaviour
     private void respon() {
 
 
-        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        if (PhotonNetwork.IsMasterClient)
         {
             Vector2 spawnPoint1 = spawnPoints[0].GetComponent<Transform>().position;
             PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint1, Quaternion.identity);
