@@ -3426,6 +3426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a30239a83d63964bbf41130d97998fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPlayers: 2
   roomNameInputField: {fileID: 1906910531}
   errorText: {fileID: 600093273}
   roomNameText: {fileID: 1188353374}
@@ -3433,7 +3434,7 @@ MonoBehaviour:
   roomListItemPrefab: {fileID: 193555703259251470, guid: 43a827bcd5e5f6d41929415b776609f1, type: 3}
   playerListContent: {fileID: 323110104}
   PlayerListItemPrefab: {fileID: 8604766921855890312, guid: 0ceda47196ede0f468311473ecbbbeef, type: 3}
-  startGameButton: {fileID: 0}
+  startGameButton: {fileID: 1013969686}
 --- !u!114 &1734431853
 MonoBehaviour:
   m_ObjectHideFlags: 0
