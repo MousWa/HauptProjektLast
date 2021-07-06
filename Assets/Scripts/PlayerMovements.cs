@@ -42,11 +42,11 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private void ProcessInputs()
     {
         float h = Input.GetAxis("Horizontal");
-      
-        float move = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(move*moveSpeed, rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space)&& IsGrounded)
+        float move = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
             Jump();
         }
