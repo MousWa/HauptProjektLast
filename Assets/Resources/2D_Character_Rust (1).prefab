@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 6487881433861375785}
   - component: {fileID: 4672484573868999021}
   - component: {fileID: 1241181914498305727}
+  - component: {fileID: -8697645258889492433}
   m_Layer: 0
   m_Name: 2D_Character_Rust (1)
   m_TagString: Untagged
@@ -336,6 +337,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216d5baf3acaee74a8d7b5eb2034b416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8697645258889492433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433672933068987121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -9.779999, y: -3.7949996, z: 0}
+  - {x: -9.779999, y: 3.795, z: 0}
+  - {x: 9.779999, y: 3.795, z: 0}
+  - {x: 9.779999, y: -3.7949996, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -113540
 --- !u!1 &1530780034303522953
 GameObject:
   m_ObjectHideFlags: 0
