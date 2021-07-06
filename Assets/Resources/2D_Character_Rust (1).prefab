@@ -667,6 +667,7 @@ MonoBehaviour:
   pv: {fileID: 8858415676794663022}
   moveSpeed: 10
   jumpforce: 350
+  crosshair: {fileID: 2369564830055227909, guid: 4a1f917992257334f9bc739cdd479442, type: 3}
 --- !u!114 &7891982239873616423
 MonoBehaviour:
   m_ObjectHideFlags: 0
