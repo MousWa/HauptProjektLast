@@ -5583,6 +5583,7 @@ MonoBehaviour:
   - {fileID: 1695744400}
   count: 3
   countDisplay: {fileID: 918246401}
+  Animing: {fileID: 2369564830055227909, guid: 4a1f917992257334f9bc739cdd479442, type: 3}
 --- !u!1 &1603955715
 GameObject:
   m_ObjectHideFlags: 0
