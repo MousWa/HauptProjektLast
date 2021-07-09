@@ -7,7 +7,7 @@ using System;
 public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 {
     public PhotonView pv;
-
+    private SpriteRenderer sp;
     public float moveSpeed = 50;
     public int jumpforce = 50;
 
@@ -18,7 +18,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
    
     private void Start()
     {
-        
+        sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
     }
     private void Update()
@@ -37,6 +37,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private void smoothMovement()
     {
         transform.position = Vector3.Lerp(transform.position, smoothMove, Time.deltaTime * 10);
+        
     }
 
     private void ProcessInputs()
@@ -45,11 +46,18 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
-
+        if (Input.GetKeyDown(KeyCode.A)) {
+            sp.flipX = true;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            sp.flipX = false;
+        }
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
             Jump();
         }
+       
     }
     void OnCollisionEnter2D(Collision2D c)
     {
