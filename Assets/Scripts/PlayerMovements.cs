@@ -14,7 +14,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private bool IsGrounded;
     private Rigidbody2D rb;
     private Vector3 smoothMove;
-
+    public GameObject gun;
    
     private void Start()
     {
@@ -48,11 +48,15 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.A)) {
             sp.flipX = true;
+            gun.GetComponent<SpriteRenderer>().flipX = true;
+
             pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             sp.flipX = false;
+            gun.GetComponent<SpriteRenderer>().flipX = false;
+
             pv.RPC("OnDirectionChange_Right",RpcTarget.Others);
         }
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
@@ -76,6 +80,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     void OnDirectionChange_Left()
     {
         sp.flipX = true;
+        gun.GetComponent<SpriteRenderer>().flipX = true;
     }
 
 
@@ -83,6 +88,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     void OnDirectionChange_Right()
     {
         sp.flipX = false;
+        gun.GetComponent<SpriteRenderer>().flipX = false;
+
     }
     void OnCollisionExit2D(Collision2D c)
     {
