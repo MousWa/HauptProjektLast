@@ -48,10 +48,12 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.A)) {
             sp.flipX = true;
+            pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             sp.flipX = false;
+            pv.RPC("OnDirectionChange_Right",RpcTarget.Others);
         }
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
@@ -59,6 +61,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
        
     }
+
     void OnCollisionEnter2D(Collision2D c)
     {
         if (photonView.IsMine)
@@ -68,6 +71,18 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
                 IsGrounded = true;
             }
         }
+    }
+    [PunRPC]
+    void OnDirectionChange_Left()
+    {
+        sp.flipX = true;
+    }
+
+
+    [PunRPC]
+    void OnDirectionChange_Right()
+    {
+        sp.flipX = false;
     }
     void OnCollisionExit2D(Collision2D c)
     {
@@ -89,6 +104,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if(stream.IsWriting)
         {
             stream.SendNext(transform.position);
+            
         }
         else if (stream.IsReading)
         {
