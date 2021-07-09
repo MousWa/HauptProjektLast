@@ -14,8 +14,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private bool IsGrounded;
     private Rigidbody2D rb;
     private Vector3 smoothMove;
-    public GameObject gun;
-   
+    public SpriteRenderer gun;
+    Boolean isRotat = false;
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
@@ -47,17 +47,23 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.A)) {
-            sp.flipX = true;
-            gun.GetComponent<SpriteRenderer>().flipX = true;
+            if (!isRotat)
+            { 
 
-            pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
+            transform.Rotate(new Vector3(0, 180, 0));
+                isRotat = true;
+                pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
+            }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            sp.flipX = false;
-            gun.GetComponent<SpriteRenderer>().flipX = false;
-
-            pv.RPC("OnDirectionChange_Right",RpcTarget.Others);
+            if (isRotat)
+            {
+                Debug.Log("why is not rotat");
+                transform.Rotate(new Vector3(0, 180, 0));
+                isRotat = false;
+                pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
@@ -79,17 +85,22 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     void OnDirectionChange_Left()
     {
-        sp.flipX = true;
-        gun.GetComponent<SpriteRenderer>().flipX = true;
+        if (!isRotat)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            isRotat = true;
+        }
     }
 
 
     [PunRPC]
     void OnDirectionChange_Right()
     {
-        sp.flipX = false;
-        gun.GetComponent<SpriteRenderer>().flipX = false;
-
+        if (isRotat)
+        {
+            transform.Rotate(new Vector3(0, 180, 0));
+            isRotat = false;
+        }
     }
     void OnCollisionExit2D(Collision2D c)
     {
