@@ -15,7 +15,16 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private Rigidbody2D rb;
     private Vector3 smoothMove;
     public SpriteRenderer gun;
-    Boolean isRotat = false;
+    public static bool isRotat = false;
+
+    private Transform aimTrans;
+
+
+    private void Awake()
+    {
+        aimTrans = transform.Find("Aim");
+    }
+
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
@@ -27,6 +36,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (photonView.IsMine)
         {
             ProcessInputs();
+            
         }
         else
         {
@@ -43,7 +53,6 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private void ProcessInputs()
     {
         float h = Input.GetAxis("Horizontal");
-
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.A)) {
@@ -69,7 +78,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             Jump();
         }
-       
+        pisolRotation();
+        pv.RPC("pisolRotation", RpcTarget.Others);
     }
 
     void OnCollisionEnter2D(Collision2D c)
@@ -128,5 +138,37 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             smoothMove = (Vector3)stream.ReceiveNext();
         }
+    }
+    [PunRPC]
+    void pisolRotation()
+    {
+        
+        Vector3 mousePosition = GetMousPosition();
+        Vector3 aimDirection = (mousePosition - transform.position).normalized;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+
+        if (angle >= -70 && angle <= 40 && !isRotat)
+        {
+            aimTrans.eulerAngles = new Vector3(0, 0, angle);
+            Debug.Log(angle);
+        }
+
+        if (angle >= 110 && angle <= 220 && isRotat)
+        {
+            aimTrans.eulerAngles = new Vector3(0, 0, angle);
+            Debug.Log(angle);
+        }
+    }
+    public static Vector3 GetMousPosition()
+    {
+        Vector3 vec = GetMousPositionWithZ(Input.mousePosition, Camera.main);
+        vec.z = 0f;
+        return vec;
+    }
+
+    private static Vector3 GetMousPositionWithZ(Vector3 mousePosition, Camera main)
+    {
+        Vector3 worldPosition = main.ScreenToWorldPoint(mousePosition);
+        return worldPosition;
     }
 }
