@@ -52,6 +52,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
     private void ProcessInputs()
     {
+        pisolRotation();
+        pv.RPC("pisolRotationPUN", RpcTarget.Others);
+        
         float h = Input.GetAxis("Horizontal");
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
@@ -78,8 +81,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             Jump();
         }
-        pisolRotation();
-        pv.RPC("pisolRotation", RpcTarget.Others);
+        
     }
 
     void OnCollisionEnter2D(Collision2D c)
@@ -140,9 +142,29 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
     }
     [PunRPC]
-    void pisolRotation()
+    void pisolRotationPUN()
     {
         
+        Vector3 mousePosition = GetMousPosition();
+        Vector3 aimDirection = (mousePosition - transform.position).normalized;
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+
+        if (angle >= -70 && angle <= 40 && !isRotat)
+        {
+            aimTrans.eulerAngles = new Vector3(0, 0, angle);
+            Debug.Log(angle);
+        }
+
+        if (angle >= 110 && angle <= 220 && isRotat)
+        {
+            aimTrans.eulerAngles = new Vector3(0, 0, angle);
+            Debug.Log(angle);
+        }
+    }
+
+    void pisolRotation()
+    {
+
         Vector3 mousePosition = GetMousPosition();
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
