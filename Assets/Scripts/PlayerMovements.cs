@@ -143,7 +143,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     void OnDirectionChange_Left()
     {
-        if (!isRotat && photonView.IsMine)
+        if (!isRotat)
         {
             transform.Rotate(new Vector3(0, 180, 0));
             isRotat = true;
@@ -154,7 +154,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     void OnDirectionChange_Right()
     {
-        if (isRotat && photonView.IsMine)
+        if (isRotat)
         {
             transform.Rotate(new Vector3(0, 180, 0));
             isRotat = false;
