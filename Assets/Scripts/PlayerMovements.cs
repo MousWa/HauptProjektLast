@@ -6,44 +6,81 @@ using System;
 
 public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 {
+    
     public PhotonView pv;
     private SpriteRenderer sp;
     public float moveSpeed = 50;
     public int jumpforce = 50;
-
+    public float buzlletSpeed;
+    private float shootingTimer = 0.0f;
     private bool IsGrounded;
     private Rigidbody2D rb;
     private Vector3 smoothMove;
     public SpriteRenderer gun;
     public static bool isRotat = false;
-
+    public GameObject BulletPrefab;
     private Transform aimTrans;
-
-
+    public Vector2 targtPos;
+    public float RotationSpeed = 90.0f;
+    public float MovementSpeed = 2.0f;
+    public float MaxSpeed = 0.2f;
+    private bool controllable = true;
+    public Transform firePoint;
+    private float rotation = 0.0f;
+    private float acceleration = 0.0f;
     private void Awake()
     {
         aimTrans = transform.Find("Aim");
+        
+       
     }
 
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+  
     }
     private void Update()
     {
-     
+
+        targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (photonView.IsMine)
         {
             ProcessInputs();
-            
+
         }
         else
         {
             smoothMovement();
         }
     }
+    public void FixedUpdate()
+    {
+        if (!photonView.IsMine)
+        {
+            return;
+        }
 
+        if (!controllable)
+        {
+            return;
+        }
+
+        
+        Quaternion rot =  Quaternion.Euler(0, rotation * RotationSpeed * Time.fixedDeltaTime, 0);
+        
+        rb.MoveRotation(rot);
+
+        Vector3 force = (rot * Vector3.forward) * acceleration * 1000.0f * MovementSpeed * Time.fixedDeltaTime;
+        rb.AddForce(force);
+
+        if (rb.velocity.magnitude > (MaxSpeed * 1000.0f))
+        {
+            rb.velocity = rb.velocity.normalized * MaxSpeed * 1000.0f;
+        }
+
+    }
     private void smoothMovement()
     {
         transform.position = Vector3.Lerp(transform.position, smoothMove, Time.deltaTime * 10);
@@ -52,8 +89,6 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
     private void ProcessInputs()
     {
-        pisolRotation();
-        pv.RPC("pisolRotationPUN", RpcTarget.Others);
         
         float h = Input.GetAxis("Horizontal");
         float move = Input.GetAxisRaw("Horizontal");
@@ -81,9 +116,44 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             Jump();
         }
-        
-    }
+        if (Input.GetButton("Fire1") && shootingTimer <= 0.0)
+        {
+            shootingTimer = 0.2f;
 
+            photonView.RPC("Fire", RpcTarget.AllViaServer);
+        }
+
+        if (shootingTimer > 0.0f)
+        {
+            shootingTimer -= Time.deltaTime;
+        }
+
+    }
+   
+    
+    [PunRPC]
+    public void Fire()
+    {
+       
+        GameObject bullet;
+
+        /** Use this if you want to fire one bullet at a time **/
+        bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity) as GameObject;
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(targtPos * buzlletSpeed, ForceMode2D.Impulse);
+
+        /** Use this if you want to fire two bullets at once **/
+        //Vector3 baseX = rotation * Vector3.right;
+        //Vector3 baseZ = rotation * Vector3.forward;
+
+        //Vector3 offsetLeft = -1.5f * baseX - 0.5f * baseZ;
+        //Vector3 offsetRight = 1.5f * baseX - 0.5f * baseZ;
+
+        //bullet = Instantiate(BulletPrefab, rigidbody.position + offsetLeft, Quaternion.identity) as GameObject;
+        //bullet.GetComponent<Bullet>().InitializeBullet(photonView.Owner, baseZ, Mathf.Abs(lag));
+        //bullet = Instantiate(BulletPrefab, rigidbody.position + offsetRight, Quaternion.identity) as GameObject;
+        //bullet.GetComponent<Bullet>().InitializeBullet(photonView.Owner, baseZ, Mathf.Abs(lag));
+    }
     void OnCollisionEnter2D(Collision2D c)
     {
         if (photonView.IsMine)
@@ -180,6 +250,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             aimTrans.eulerAngles = new Vector3(0, 0, angle);
             Debug.Log(angle);
         }
+        pv.RPC("pisolRotationPUN", RpcTarget.Others);
     }
     public static Vector3 GetMousPosition()
     {

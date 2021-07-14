@@ -42,6 +42,7 @@ MonoBehaviour:
   - OnDirectionChange_Left
   - OnDirectionChange_Right
   - pisolRotation
+  - pisolRotationPUN
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
