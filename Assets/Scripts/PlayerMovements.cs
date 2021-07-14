@@ -24,7 +24,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     public float RotationSpeed = 90.0f;
     public float MovementSpeed = 2.0f;
     public float MaxSpeed = 0.2f;
-    private bool controllable = true;
+   // private bool controllable = true;
     public Transform firePoint;
     private float rotation = 0.0f;
     private float acceleration = 0.0f;
@@ -71,8 +71,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (Input.GetKeyDown(KeyCode.A)) {
             if (!isRotat)
             { 
-
-            transform.Rotate(new Vector3(0, 180, 0));
+                transform.Rotate(new Vector3(0, 180, 0));
                 isRotat = true;
                 pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
             }
@@ -81,7 +80,6 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             if (isRotat)
             {
-                Debug.Log("why is not rotat");
                 transform.Rotate(new Vector3(0, 180, 0));
                 isRotat = false;
                 pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
@@ -115,7 +113,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         /** Use this if you want to fire one bullet at a time **/
         bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity) as GameObject;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(targtPos * buzlletSpeed, ForceMode2D.Impulse);
+        rb.AddForce(targtPos , ForceMode2D.Impulse);
 
         /** Use this if you want to fire two bullets at once **/
         //Vector3 baseX = rotation * Vector3.right;
@@ -186,6 +184,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             smoothMove = (Vector3)stream.ReceiveNext();
         }
     }
+    /*
     [PunRPC]
     void pisolRotationPUN()
     {
@@ -226,7 +225,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Debug.Log(angle);
         }
         pv.RPC("pisolRotationPUN", RpcTarget.Others);
-    }
+    }*/
+
     public static Vector3 GetMousPosition()
     {
         Vector3 vec = GetMousPositionWithZ(Input.mousePosition, Camera.main);
