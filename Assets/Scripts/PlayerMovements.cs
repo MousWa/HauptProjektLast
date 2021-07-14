@@ -69,20 +69,20 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (Input.GetKeyDown(KeyCode.A)) {
-            if (!isRotat)
+            if (!isRotat&&photonView.IsMine)
             { 
                 transform.Rotate(new Vector3(0, 180, 0));
                 isRotat = true;
-                pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
+                pv.RPC("OnDirectionChange_Left", RpcTarget.All);
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (isRotat)
+            if (isRotat && photonView.IsMine)
             {
                 transform.Rotate(new Vector3(0, 180, 0));
                 isRotat = false;
-                pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
+                pv.RPC("OnDirectionChange_Right", RpcTarget.All);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
@@ -114,7 +114,6 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity) as GameObject;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(targtPos , ForceMode2D.Impulse);
-
         /** Use this if you want to fire two bullets at once **/
         //Vector3 baseX = rotation * Vector3.right;
         //Vector3 baseZ = rotation * Vector3.forward;
@@ -140,7 +139,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     void OnDirectionChange_Left()
     {
-        if (!isRotat)
+        if (!isRotat && photonView.IsMine)
         {
             transform.Rotate(new Vector3(0, 180, 0));
             isRotat = true;
@@ -151,7 +150,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     void OnDirectionChange_Right()
     {
-        if (isRotat)
+        if (isRotat && photonView.IsMine)
         {
             transform.Rotate(new Vector3(0, 180, 0));
             isRotat = false;
