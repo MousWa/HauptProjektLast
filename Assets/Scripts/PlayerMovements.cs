@@ -21,6 +21,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     public GameObject BulletPrefab;
     private Transform aimTrans;
     public Vector2 targtPos;
+    public Vector2 Direction ;
     public float RotationSpeed = 90.0f;
     public float MovementSpeed = 2.0f;
     public float MaxSpeed = 0.2f;
@@ -45,6 +46,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     {
 
         targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         if (photonView.IsMine)
         {
             ProcessInputs();
@@ -112,8 +114,10 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
         /** Use this if you want to fire one bullet at a time **/
         bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity) as GameObject;
+        Vector2 bulletpos = bullet.GetComponent<Transform>().position;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(targtPos , ForceMode2D.Impulse);
+        Direction = (targtPos - bulletpos).normalized;
+        rb.AddForceAtPosition(Direction*buzlletSpeed, targtPos) ;
         /** Use this if you want to fire two bullets at once **/
         //Vector3 baseX = rotation * Vector3.right;
         //Vector3 baseZ = rotation * Vector3.forward;
