@@ -75,7 +75,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             { 
                 transform.Rotate(new Vector3(0, 180, 0));
                 isRotat = true;
-                pv.RPC("OnDirectionChange_Left", RpcTarget.All);
+                pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -84,7 +84,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
                 transform.Rotate(new Vector3(0, 180, 0));
                 isRotat = false;
-                pv.RPC("OnDirectionChange_Right", RpcTarget.All);
+                pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
             }
         }
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
