@@ -55,32 +55,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             smoothMovement();
         }
     }
-    public void FixedUpdate()
-    {
-        if (!photonView.IsMine)
-        {
-            return;
-        }
-
-        if (!controllable)
-        {
-            return;
-        }
-
-        
-        Quaternion rot =  Quaternion.Euler(0, rotation * RotationSpeed * Time.fixedDeltaTime, 0);
-        
-        rb.MoveRotation(rot);
-
-        Vector3 force = (rot * Vector3.forward) * acceleration * 1000.0f * MovementSpeed * Time.fixedDeltaTime;
-        rb.AddForce(force);
-
-        if (rb.velocity.magnitude > (MaxSpeed * 1000.0f))
-        {
-            rb.velocity = rb.velocity.normalized * MaxSpeed * 1000.0f;
-        }
-
-    }
+    
     private void smoothMovement()
     {
         transform.position = Vector3.Lerp(transform.position, smoothMove, Time.deltaTime * 10);
