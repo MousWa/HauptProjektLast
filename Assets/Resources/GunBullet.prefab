@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5334073066178437594}
   - component: {fileID: 5639313420610665382}
   - component: {fileID: 401362297572087867}
+  - component: {fileID: -1678861212154877562}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: GunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3006495290713017120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.32566, y: -0.15864, z: 0}
-  m_LocalScale: {x: 0.09695652, y: 0.033882886, z: 1}
+  m_LocalPosition: {x: -0.26372, y: -0.08743, z: 0}
+  m_LocalScale: {x: 0.26213473, y: 0.22633304, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 25
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7565de7c9a3cc1a46bef8c1bd376cebd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,6 +120,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.004432619, y: 0.0025799475}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.0988348
+--- !u!114 &-1678861212154877562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006495290713017120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc6bf3843a1fe04480789ebc4a17b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PistolDamage: 0

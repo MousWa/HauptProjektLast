@@ -114,9 +114,13 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
         /** Use this if you want to fire one bullet at a time **/
         bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity) as GameObject;
+        
+
         Vector2 bulletpos = bullet.GetComponent<Transform>().position;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         Direction = (targtPos - bulletpos).normalized;
+        bullet.transform.Rotate(Direction);
+       
         rb.AddForceAtPosition(Direction*buzlletSpeed, targtPos) ;
         /** Use this if you want to fire two bullets at once **/
         //Vector3 baseX = rotation * Vector3.right;
