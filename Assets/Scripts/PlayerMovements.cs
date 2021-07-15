@@ -235,9 +235,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
 
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
 
-            PhotonNetwork.LoadLevel(2);
+            //PhotonNetwork.LoadLevel(2);
         }
     }
     [PunRPC]
@@ -247,9 +247,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
             
             
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 
-                PhotonNetwork.LoadLevel(2);
+                //PhotonNetwork.LoadLevel(2);
             }
     }
     /*
