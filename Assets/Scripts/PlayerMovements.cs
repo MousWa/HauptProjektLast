@@ -53,10 +53,10 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
     private void Update()
     {
-        targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         if (photonView.IsMine)
         {
-            targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             ProcessInputs();
             if (currentHelath <= 0f)
             {
@@ -107,8 +107,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
         if (Input.GetButton("Fire1") && shootingTimer <= 0.0)
         {
+            targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             shootingTimer = 0.2f;
-
             photonView.RPC("Fire", RpcTarget.AllViaServer);
         }
 
@@ -123,7 +123,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     public void Fire()
     {
-       
+        
         GameObject bullet;
 
         /** Use this if you want to fire one bullet at a time **/
@@ -210,8 +210,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         else if (stream.IsReading)
         {
             smoothMove = (Vector3)stream.ReceiveNext();
-            targtPos= (Vector3)stream.ReceiveNext();
-            Direction = (Vector3)stream.ReceiveNext();
+            
 
         }
     }
