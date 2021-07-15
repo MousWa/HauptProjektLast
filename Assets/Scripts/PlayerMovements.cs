@@ -4,10 +4,12 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using System;
+using UnityEngine.UI;
 
 public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 {
-    
+
+    [SerializeField] Image healthbarImage;
     public PhotonView pv;
     private SpriteRenderer sp;
     public float moveSpeed = 50;
@@ -219,6 +221,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             return;
         }
         currentHelath -= damage;
+        healthbarImage.fillAmount = currentHelath / maxHealth;
 
         if (currentHelath <= 0)
         {
