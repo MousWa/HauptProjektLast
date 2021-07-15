@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 2725108797302635425}
   - component: {fileID: 1920814650586656033}
   m_Layer: 0
-  m_Name: 2D_Character_Rust (1)
+  m_Name: pisotl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,13 +608,14 @@ MonoBehaviour:
   jumpforce: 300
   buzlletSpeed: 1000
   gun: {fileID: 0}
-  BulletPrefab: {fileID: 4317868386969158108, guid: 6835adde9e3d4e54c88189f8ce96c9f9, type: 3}
+  BulletPrefab: {fileID: 3006495290713017120, guid: b0006ca0998550e429511bb0a6f9cf3b, type: 3}
   targtPos: {x: 0, y: 0}
   Direction: {x: 0, y: 0}
   RotationSpeed: 90
   MovementSpeed: 2
   MaxSpeed: 0.2
   firePoint: {fileID: 6429195629953810540}
+  Damage: 10
 --- !u!114 &7864396687912986935
 MonoBehaviour:
   m_ObjectHideFlags: 0

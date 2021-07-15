@@ -32,7 +32,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private float acceleration = 0.0f;
     const float maxHealth = 100f;
     float currentHelath = maxHealth;
-  
+    public float Damage;
    
 
     private void Awake()
@@ -151,7 +151,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             }
             if (c.gameObject.tag == "Bullet")
             {
-                currentHelath -= 10;
+                currentHelath -= Damage;
             }
         }
     }
@@ -225,7 +225,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Die();
         }
     }
-    void Die()
+    void die()
     {
         if (currentHelath <= 0f)
         {
