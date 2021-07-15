@@ -225,6 +225,17 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Die();
         }
     }
+    void Die()
+    {
+        if (currentHelath <= 0f)
+        {
+
+
+            Destroy(gameObject);
+
+            PhotonNetwork.LoadLevel(2);
+        }
+    }
     [PunRPC]
     void Die()
     {
