@@ -32,7 +32,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private float acceleration = 0.0f;
     const float maxHealth = 100f;
     float currentHelath = maxHealth;
-    public static PlayerMovements Instance;
+  
    
 
     private void Awake()
@@ -46,7 +46,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     {
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        Instance = this;
+        
 
     }
     private void Update()
@@ -225,16 +225,14 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Die();
         }
     }
+    [PunRPC]
     void Die()
     {
-        if (photonView.IsMine)
-        {
-           
             if (currentHelath <= 0f)
             {
+                PhotonNetwork.AutomaticallySyncScene = true;
                 PhotonNetwork.LoadLevel(2);
             }
-        }
     }
     /*
     [PunRPC]
