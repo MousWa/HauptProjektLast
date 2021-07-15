@@ -52,10 +52,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private void Update()
     {
 
-        targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
         if (photonView.IsMine)
         {
+            targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ProcessInputs();
             if (currentHelath <= 0f)
             {
@@ -81,6 +80,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         float h = Input.GetAxis("Horizontal");
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+         if (photonView.IsMine)
         if (Input.GetKeyDown(KeyCode.A)) {
             if (!isRotat&&photonView.IsMine)
             { 
