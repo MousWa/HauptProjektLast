@@ -56,7 +56,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         
         if (photonView.IsMine)
         {
-            
+            targtPos = Input.mousePosition;
             ProcessInputs();
             if (currentHelath <= 0f)
             {
@@ -66,7 +66,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
         else
         {
-            smoothMovement();
+            smoothMovement();   
         }
     }
     
@@ -107,7 +107,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
         if (Input.GetButton("Fire1") && shootingTimer <= 0.0)
         {
-            targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             shootingTimer = 0.2f;
             photonView.RPC("Fire", RpcTarget.AllViaServer);
         }
