@@ -230,7 +230,10 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     {
             if (currentHelath <= 0f)
             {
-                PhotonNetwork.AutomaticallySyncScene = true;
+            
+            
+                Destroy(gameObject);
+                
                 PhotonNetwork.LoadLevel(2);
             }
     }
