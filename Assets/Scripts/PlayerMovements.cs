@@ -143,6 +143,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         //bullet = Instantiate(BulletPrefab, rigidbody.position + offsetRight, Quaternion.identity) as GameObject;
         //bullet.GetComponent<Bullet>().InitializeBullet(photonView.Owner, baseZ, Mathf.Abs(lag));
     }
+    
     void OnCollisionEnter2D(Collision2D c)
     {
         if (photonView.IsMine)
@@ -155,7 +156,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
                 currentHelath -= Damage;
                 healthbarImage.fillAmount = currentHelath / maxHealth;
-                pv.RPC("RPCTakeDamage", RpcTarget.All);
+                pv.RPC("RPCTakeDamage", RpcTarget.Others);
             }
         }
     }
@@ -201,7 +202,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if(stream.IsWriting)
         {
             stream.SendNext(transform.position);
-            
+            stream.SendNext(Direction);
+            stream.SendNext(targtPos);
+
         }
         else if (stream.IsReading)
         {
