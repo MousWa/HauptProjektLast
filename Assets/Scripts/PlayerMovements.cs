@@ -211,15 +211,14 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
 
    
-    
     [PunRPC]
-    void RPCTakeDamage(float damage)
+    void RPCTakeDamage()
     {
         if (!pv.IsMine)
         {
             return;
         }
-        currentHelath -= damage;
+        currentHelath -= Damage;
         healthbarImage.fillAmount = currentHelath / maxHealth;
 
         if (currentHelath <= 0)
