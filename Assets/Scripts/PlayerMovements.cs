@@ -53,7 +53,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
     private void Update()
     {
-
+        targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (photonView.IsMine)
         {
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -203,8 +203,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if(stream.IsWriting)
         {
             stream.SendNext(transform.position);
-            stream.SendNext(Direction);
-            stream.SendNext(targtPos);
+            
             
 
         }
