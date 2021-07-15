@@ -154,6 +154,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             if (c.gameObject.tag == "Bullet")
             {
                 currentHelath -= Damage;
+                healthbarImage.fillAmount = currentHelath / maxHealth;
             }
         }
     }
