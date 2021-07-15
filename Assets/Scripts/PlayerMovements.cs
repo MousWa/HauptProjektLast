@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 {
 
-    [SerializeField] Image healthbarImage;
+    public Image healthbarImage;
     public PhotonView pv;
     private SpriteRenderer sp;
     public float moveSpeed = 50;
@@ -66,16 +66,16 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
         else
         {
-            //smoothMovement();
+            smoothMovement();
         }
     }
-    /*
+    
     private void smoothMovement()
     {
         transform.position = Vector3.Lerp(transform.position, smoothMove, Time.deltaTime * 10);
         
     }
-    */
+    
     private void ProcessInputs()
     {
         
@@ -204,6 +204,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             stream.SendNext(transform.position);
             stream.SendNext(Direction);
             stream.SendNext(targtPos);
+            
 
         }
         else if (stream.IsReading)
