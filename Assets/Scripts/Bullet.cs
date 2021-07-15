@@ -4,7 +4,7 @@ using Photon.Realtime;
 public class Bullet : MonoBehaviour
 {
 
-    public float PistolDamage;
+    public static float PistolDamage;
   
     public void Start()
     {
