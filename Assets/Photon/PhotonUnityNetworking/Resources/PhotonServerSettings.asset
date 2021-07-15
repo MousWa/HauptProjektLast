@@ -43,6 +43,7 @@ MonoBehaviour:
   - OnDirectionChange_Right
   - pisolRotation
   - pisolRotationPUN
+  - RPCTakeDamage
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

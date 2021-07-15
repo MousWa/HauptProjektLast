@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 using System;
 
 public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
@@ -29,6 +30,11 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     public Transform firePoint;
     private float rotation = 0.0f;
     private float acceleration = 0.0f;
+    const float maxHealth = 100f;
+    float currentHelath = maxHealth;
+    public static PlayerMovements Instance;
+   
+
     private void Awake()
     {
         aimTrans = transform.Find("Aim");
@@ -40,7 +46,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     {
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-  
+        Instance = this;
+
     }
     private void Update()
     {
@@ -50,6 +57,10 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (photonView.IsMine)
         {
             ProcessInputs();
+            if (currentHelath <= 0f)
+            {
+                PhotonNetwork.LoadLevel(2);
+            }
 
         }
         else
@@ -119,8 +130,6 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         Vector2 bulletpos = bullet.GetComponent<Transform>().position;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         Direction = (targtPos - bulletpos).normalized;
-        bullet.transform.Rotate(Direction);
-       
         rb.AddForceAtPosition(Direction*buzlletSpeed, targtPos) ;
         /** Use this if you want to fire two bullets at once **/
         //Vector3 baseX = rotation * Vector3.right;
@@ -141,6 +150,10 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             if (c.gameObject.tag == "Ground")
             {
                 IsGrounded = true;
+            }
+            if (c.gameObject.tag == "Bullet")
+            {
+                currentHelath -= Bullet.PistolDamage;
             }
         }
     }
@@ -190,6 +203,37 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             smoothMove = (Vector3)stream.ReceiveNext();
            
+        }
+    }
+
+   
+    public void TakeDamage(float damage)
+    {
+        pv.RPC("RPCTakeDamage", RpcTarget.All, damage);
+    }
+    [PunRPC]
+    void RPCTakeDamage(float damage)
+    {
+        if (!pv.IsMine)
+        {
+            return;
+        }
+        currentHelath -= damage;
+
+        if (currentHelath <= 0)
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        if (photonView.IsMine)
+        {
+           
+            if (currentHelath <= 0f)
+            {
+                PhotonNetwork.LoadLevel(2);
+            }
         }
     }
     /*
