@@ -155,6 +155,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
                 currentHelath -= Damage;
                 healthbarImage.fillAmount = currentHelath / maxHealth;
+                pv.RPC("RPCTakeDamage", RpcTarget.All);
             }
         }
     }
@@ -210,10 +211,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
 
    
-    public void TakeDamage(float damage)
-    {
-        pv.RPC("RPCTakeDamage", RpcTarget.All, damage);
-    }
+    
     [PunRPC]
     void RPCTakeDamage(float damage)
     {
