@@ -80,7 +80,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         float h = Input.GetAxis("Horizontal");
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
-         if (photonView.IsMine)
+        /*
         if (Input.GetKeyDown(KeyCode.A)) {
             if (!isRotat&&photonView.IsMine)
             { 
@@ -97,8 +97,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
                 isRotat = false;
                 pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
+        }*/
+        if (Input.GetKeyDown(KeyCode.Space) /*&& IsGrounded*/)
         {
             Jump();
         }
@@ -125,8 +125,6 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
         /** Use this if you want to fire one bullet at a time **/
         bullet = Instantiate(BulletPrefab, firePoint.position, Quaternion.identity) as GameObject;
-        
-
         Vector2 bulletpos = bullet.GetComponent<Transform>().position;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         Direction = (targtPos - bulletpos).normalized;
@@ -153,10 +151,11 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             }
             if (c.gameObject.tag == "Bullet")
             {
-                currentHelath -= Bullet.PistolDamage;
+                currentHelath -= 10;
             }
         }
     }
+    /*
     [PunRPC]
     void OnDirectionChange_Left()
     {
@@ -177,6 +176,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             isRotat = false;
         }
     }
+    */
     void OnCollisionExit2D(Collision2D c)
     {
         if (photonView.IsMine)
