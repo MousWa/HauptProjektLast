@@ -66,16 +66,16 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
         else
         {
-            smoothMovement();
+            //smoothMovement();
         }
     }
-    
+    /*
     private void smoothMovement()
     {
         transform.position = Vector3.Lerp(transform.position, smoothMove, Time.deltaTime * 10);
         
     }
-
+    */
     private void ProcessInputs()
     {
         
@@ -208,8 +208,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
         else if (stream.IsReading)
         {
-            smoothMove = (Vector3)stream.ReceiveNext();
-           
+           // smoothMove = (Vector3)stream.ReceiveNext();
+            stream.ReceiveNext();
+
         }
     }
 
