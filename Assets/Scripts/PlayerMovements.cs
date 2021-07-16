@@ -63,7 +63,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             ProcessInputs(); 
             if (currentHelath <= 0f)
             {
-                PhotonNetwork.LoadLevel(2);
+               // PhotonNetwork.LoadLevel(2);
             }
 
         }
