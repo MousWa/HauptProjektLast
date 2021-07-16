@@ -23,8 +23,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     public static bool isRotat = false;
     public GameObject BulletPrefab;
     private Transform aimTrans;
-    public Vector3 targtPos;
-    public Vector3 direction ;
+    private Vector3 targtPos;
+    private Vector3 direction ;
     public float RotationSpeed = 90.0f;
     public float MovementSpeed = 2.0f;
     public float MaxSpeed = 0.2f;
@@ -35,7 +35,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     const float maxHealth = 100f;
     float currentHelath = maxHealth;
     public float Damage;
-    Rigidbody2D bulletrb;
+  
 
     private void Awake()
     {
@@ -49,7 +49,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
-        bulletrb = BulletPrefab.GetComponent<Rigidbody2D>();
+       
 
 
     }
@@ -59,8 +59,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (photonView.IsMine)
         {
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 bulletpos = BulletPrefab.GetComponent<Transform>().position;
-            direction = (targtPos - bulletpos).normalized;
+            
             ProcessInputs(); 
             if (currentHelath <= 0f)
             {
@@ -125,15 +124,17 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
    
     
     [PunRPC]
-    public void Fire(Vector3 direction)
+    public void Fire()
     {
-
         
-        /** Use this if you want to fire one bullet at a time **/
-        Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
 
+        GameObject bullet;
+        /** Use this if you want to fire one bullet at a time **/
+        bullet= Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
+        Vector3 bulletpos = bullet.GetComponent<Transform>().position;
+        direction = (targtPos - bulletpos).normalized;
         //bulletrb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
-        bulletrb.velocity = firePoint.up * 10f;
+        bullet.GetComponent<Rigidbody2D>().AddForceAtPosition(direction * buzlletSpeed, targtPos);
         /** Use this if you want to fire two bullets at once **/
         //Vector3 baseX = rotation * Vector3.right;
         //Vector3 baseZ = rotation * Vector3.forward;
