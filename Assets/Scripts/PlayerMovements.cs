@@ -35,7 +35,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     const float maxHealth = 100f;
     float currentHelath = maxHealth;
     public float Damage;
-    
+    Rigidbody2D bulletrb;
 
     private void Awake()
     {
@@ -49,6 +49,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
+        bulletrb = BulletPrefab.GetComponent<Rigidbody2D>();
 
 
     }
@@ -60,7 +61,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 bulletpos = BulletPrefab.GetComponent<Transform>().position;
             direction = (targtPos - bulletpos).normalized;
-            ProcessInputs();
+            ProcessInputs(); 
             if (currentHelath <= 0f)
             {
                 PhotonNetwork.LoadLevel(2);
@@ -112,7 +113,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             
             shootingTimer = 0.2f;
-            photonView.RPC("Fire", RpcTarget.OthersBuffered, direction);
+            photonView.RPC("Fire", RpcTarget.All, direction);
         }
 
         if (shootingTimer > 0.0f)
@@ -130,8 +131,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         
         /** Use this if you want to fire one bullet at a time **/
         Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
-        Rigidbody2D rb = BulletPrefab.GetComponent<Rigidbody2D>();
-        rb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
+
+        bulletrb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
         /** Use this if you want to fire two bullets at once **/
         //Vector3 baseX = rotation * Vector3.right;
         //Vector3 baseZ = rotation * Vector3.forward;

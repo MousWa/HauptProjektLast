@@ -686,8 +686,8 @@ MonoBehaviour:
   buzlletSpeed: 1000
   gun: {fileID: 0}
   BulletPrefab: {fileID: 3006495290713017120, guid: b0006ca0998550e429511bb0a6f9cf3b, type: 3}
-  targtPos: {x: 0, y: 0}
-  Direction: {x: 0, y: 0}
+  targtPos: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
   RotationSpeed: 90
   MovementSpeed: 2
   MaxSpeed: 0.2
