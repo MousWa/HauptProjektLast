@@ -12,8 +12,14 @@ public class Aiming : MonoBehaviourPunCallbacks, IPunObservable
     // Update is called once per frame
     void Update()
     {
-        targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = targtPos;
+        if (photonView.IsMine)
+        {
+
+            targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = targtPos;
+
+        }
+        
     }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
