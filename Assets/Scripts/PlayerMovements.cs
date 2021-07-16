@@ -112,7 +112,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             
             shootingTimer = 0.2f;
-            photonView.RPC("Fire", RpcTarget.All, direction);
+            photonView.RPC("Fire", RpcTarget.All);
         }
 
         if (shootingTimer > 0.0f)
@@ -160,7 +160,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
                 currentHelath -= Damage;
                 healthbarImage.fillAmount = currentHelath / maxHealth;
-                pv.RPC("RPCTakeDamage", RpcTarget.Others);
+                pv.RPC("RPCTakeDamage", RpcTarget.All);
             }
         }
     }
@@ -213,7 +213,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         else if (stream.IsReading)
         {
             smoothMove = (Vector3)stream.ReceiveNext();
-            
+            targtPos = (Vector3)stream.ReceiveNext();
 
         }
     }
