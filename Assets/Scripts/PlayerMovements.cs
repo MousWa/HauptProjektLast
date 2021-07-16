@@ -58,12 +58,12 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         
         if (photonView.IsMine)
         {
-
-            direction = Aiming.targtPos;
+            targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             ProcessInputs(); 
             if (currentHelath <= 0f)
             {
-               // PhotonNetwork.LoadLevel(2);
+                PhotonNetwork.LoadLevel(2);
             }
 
         }
@@ -131,8 +131,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         GameObject bullet;
         /** Use this if you want to fire one bullet at a time **/
         bullet= Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
-        
-        
+        Vector3 bulletpos = bullet.GetComponent<Transform>().position;
+        direction = (targtPos - bulletpos).normalized;
         //bulletrb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
         bullet.GetComponent<Rigidbody2D>().AddForceAtPosition(direction * buzlletSpeed, targtPos);
         /** Use this if you want to fire two bullets at once **/
@@ -206,14 +206,14 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if(stream.IsWriting)
         {
             stream.SendNext(transform.position);
-            
+            stream.SendNext(targtPos);
             
 
         }
         else if (stream.IsReading)
         {
             smoothMove = (Vector3)stream.ReceiveNext();
-            
+            targtPos = (Vector3)stream.ReceiveNext();
 
         }
     }
