@@ -6,7 +6,7 @@ using Photon.Pun;
 public class Aiming : MonoBehaviourPunCallbacks, IPunObservable
 {
     // Start is called before the first frame update
-   private Vector2 targtPos;
+   public static Vector2 targtPos;
   
 
     // Update is called once per frame

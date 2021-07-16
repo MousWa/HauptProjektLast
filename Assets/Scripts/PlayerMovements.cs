@@ -11,28 +11,42 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
     public Image healthbarImage;
     public PhotonView pv;
+    private SpriteRenderer sp;
     public float moveSpeed = 50;
     public int jumpforce = 50;
+    public float buzlletSpeed;
+    private float shootingTimer = 0.0f;
     private bool IsGrounded;
     private Rigidbody2D rb;
     private Vector3 smoothMove;
     public SpriteRenderer gun;
     public static bool isRotat = false;
-    
+    public GameObject BulletPrefab;
+    private Transform aimTrans;
+    private Vector3 targtPos;
+    private Vector3 direction ;
     public float RotationSpeed = 90.0f;
     public float MovementSpeed = 2.0f;
     public float MaxSpeed = 0.2f;
    // private bool controllable = true;
-   
+    public Transform firePoint;
+    private float rotation = 0.0f;
+    private float acceleration = 0.0f;
     const float maxHealth = 100f;
     float currentHelath = maxHealth;
     public float Damage;
   
 
-  
+    private void Awake()
+    {
+        aimTrans = transform.Find("Aim");
+        
+       
+    }
 
     private void Start()
     {
+        sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
        
@@ -42,9 +56,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private void Update()
     {
         
-        if (pv.IsMine)
+        if (photonView.IsMine)
         {
-           
+            targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             
             ProcessInputs(); 
             if (currentHelath <= 0f)
@@ -94,16 +108,49 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             Jump();
         }
-       
+        if (Input.GetButton("Fire1") && shootingTimer <= 0.0 )
+        {
+            
+            shootingTimer = 0.2f;
+            photonView.RPC("Fire", RpcTarget.All);
+        }
+
+        if (shootingTimer > 0.0f)
+        {
+            shootingTimer -= Time.deltaTime;
+        }
 
     }
    
     
-    
+    [PunRPC]
+    public void Fire()
+    {
+        
+
+        GameObject bullet;
+        /** Use this if you want to fire one bullet at a time **/
+        bullet= Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
+        Vector3 bulletpos = bullet.GetComponent<Transform>().position;
+        direction = (targtPos - bulletpos).normalized;
+        //bulletrb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
+        bullet.GetComponent<Rigidbody2D>().AddForceAtPosition(direction * buzlletSpeed, targtPos);
+        /** Use this if you want to fire two bullets at once **/
+        //Vector3 baseX = rotation * Vector3.right;
+        //Vector3 baseZ = rotation * Vector3.forward;
+
+        //Vector3 offsetLeft = -1.5f * baseX - 0.5f * baseZ;
+        //Vector3 offsetRight = 1.5f * baseX - 0.5f * baseZ;
+
+        //bullet = Instantiate(BulletPrefab, rigidbody.position + offsetLeft, Quaternion.identity) as GameObject;
+        //bullet.GetComponent<Bullet>().InitializeBullet(photonView.Owner, baseZ, Mathf.Abs(lag));
+        //bullet = Instantiate(BulletPrefab, rigidbody.position + offsetRight, Quaternion.identity) as GameObject;
+        //bullet.GetComponent<Bullet>().InitializeBullet(photonView.Owner, baseZ, Mathf.Abs(lag));
+    }
     
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (pv.IsMine)
+        if (photonView.IsMine)
         {
             if (c.gameObject.tag == "Ground")
             {
@@ -141,7 +188,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     */
     void OnCollisionExit2D(Collision2D c)
     {
-        if (pv.IsMine)
+        if (photonView.IsMine)
         {
             if (c.gameObject.tag == "Ground")
             {
@@ -159,12 +206,14 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if(stream.IsWriting)
         {
             stream.SendNext(transform.position);
+            stream.SendNext(targtPos);
             
 
         }
         else if (stream.IsReading)
         {
             smoothMove = (Vector3)stream.ReceiveNext();
+            targtPos = (Vector3)stream.ReceiveNext();
 
         }
     }
