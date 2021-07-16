@@ -48,7 +48,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     {
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        
+        pv = GetComponent<PhotonView>();
+
 
     }
     private void Update()
@@ -105,7 +106,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             Jump();
         }
-        if (Input.GetButton("Fire1") && shootingTimer <= 0.0)
+        if (Input.GetButton("Fire1") && shootingTimer <= 0.0&& pv.IsMine)
         {
             
             shootingTimer = 0.2f;
