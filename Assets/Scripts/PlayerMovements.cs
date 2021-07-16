@@ -59,7 +59,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (photonView.IsMine)
         {
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
+            healthbarImage.fillAmount = currentHelath / maxHealth;
             ProcessInputs(); 
             if (currentHelath <= 0f)
             {
