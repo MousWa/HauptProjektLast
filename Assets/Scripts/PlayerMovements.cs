@@ -213,7 +213,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         else if (stream.IsReading)
         {
             smoothMove = (Vector3)stream.ReceiveNext();
-            targtPos = (Vector3)stream.ReceiveNext();
+            
 
         }
     }
