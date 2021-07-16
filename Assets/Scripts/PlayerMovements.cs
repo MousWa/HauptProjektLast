@@ -150,7 +150,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (photonView.IsMine)
+        if (pv.IsMine)
         {
             if (c.gameObject.tag == "Ground")
             {
@@ -158,8 +158,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             }
             if (c.gameObject.tag == "Bullet")
             {
-                currentHelath -= Damage;
-                healthbarImage.fillAmount = currentHelath / maxHealth;
+             
                 pv.RPC("RPCTakeDamage", RpcTarget.All);
             }
         }
@@ -221,7 +220,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
    
     [PunRPC]
-    void RPCTakeDamage()
+    public void RPCTakeDamage()
     {
         if (!pv.IsMine)
         {
