@@ -58,8 +58,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         
         if (photonView.IsMine)
         {
-            
-            
+
+            direction = Aiming.targtPos;
             ProcessInputs(); 
             if (currentHelath <= 0f)
             {
@@ -132,7 +132,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         /** Use this if you want to fire one bullet at a time **/
         bullet= Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
         
-        direction = Aiming.targtPos;
+        
         //bulletrb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
         bullet.GetComponent<Rigidbody2D>().AddForceAtPosition(direction * buzlletSpeed, targtPos);
         /** Use this if you want to fire two bullets at once **/
