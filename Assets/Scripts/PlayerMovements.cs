@@ -207,13 +207,14 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             stream.SendNext(transform.position);
             stream.SendNext(targtPos);
-            
+            stream.SendNext(currentHelath);
 
         }
         else if (stream.IsReading)
         {
             smoothMove = (Vector3)stream.ReceiveNext();
             targtPos = (Vector3)stream.ReceiveNext();
+            currentHelath= (float)stream.ReceiveNext(); ;
 
         }
     }
