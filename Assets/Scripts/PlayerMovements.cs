@@ -57,7 +57,9 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 
             if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(5))
             {
+                Destroy(gameObject);
                 PhotonNetwork.LoadLevel(7);
+
             }
             else
             {
