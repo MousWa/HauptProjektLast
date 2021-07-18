@@ -200,7 +200,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     {
         if (!pv.IsMine)
         {
-            return;
+            healthbarImage.fillAmount = currentHelath / maxHealth;
+            
         }
         currentHelath -= Damage;
         healthbarImage.fillAmount = currentHelath / maxHealth;
