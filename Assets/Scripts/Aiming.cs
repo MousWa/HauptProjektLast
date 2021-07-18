@@ -20,8 +20,10 @@ public class Aiming : MonoBehaviourPunCallbacks, IPunObservable
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = targtPos;
         }
-        
-    }
+        else {
+            gameObject.SetActive(false);
+
+        }
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
