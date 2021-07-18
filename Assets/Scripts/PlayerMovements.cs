@@ -61,10 +61,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ProcessInputs(); 
-            if (currentHelath <= 0f)
-            {
-                PhotonNetwork.LoadLevel(2);
-            }
+
 
         }
         else
@@ -86,7 +83,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         float h = Input.GetAxis("Horizontal");
         float move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
-        /*
+        
         if (Input.GetKeyDown(KeyCode.A)) {
             if (!isRotat&&photonView.IsMine)
             { 
@@ -103,7 +100,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
                 isRotat = false;
                 pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
             }
-        }*/
+        }
         if (Input.GetKeyDown(KeyCode.Space) /*&& IsGrounded*/)
         {
             Jump();
@@ -154,7 +151,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             }
         }
     }
-    /*
+    
     [PunRPC]
     void OnDirectionChange_Left()
     {
@@ -175,7 +172,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             isRotat = false;
         }
     }
-    */
+    
     void OnCollisionExit2D(Collision2D c)
     {
         if (photonView.IsMine)
@@ -197,11 +194,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     public void RPCTakeDamage()
     {
-   //     if (!pv.IsMine)
-     //   {
-       //     healthbarImage.fillAmount = currentHelath / maxHealth;
-            
-        //}
+   
         currentHelath -= Damage;
         healthbarImage.fillAmount = currentHelath / maxHealth;
 
@@ -228,12 +221,12 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
             
             
-                //Destroy(gameObject);
+                Destroy(gameObject);
                 
-                //PhotonNetwork.LoadLevel(2);
+             //   PhotonNetwork.LoadLevel(2);
             }
     }
-    /*
+    
     [PunRPC]
     void pisolRotationPUN()
     {
@@ -274,7 +267,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Debug.Log(angle);
         }
         pv.RPC("pisolRotationPUN", RpcTarget.Others);
-    }*/
+    }
 
     public static Vector3 GetMousPosition()
     {
