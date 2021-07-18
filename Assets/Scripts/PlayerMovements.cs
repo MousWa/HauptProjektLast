@@ -37,13 +37,6 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     public float Damage;
   
 
-    private void Awake()
-    {
-        aimTrans = transform.Find("Aim");
-        
-       
-    }
-
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
@@ -61,7 +54,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ProcessInputs();
-            pv.RPC("pisolRotationPUN", RpcTarget.Others);
+            
 
         }
         else
