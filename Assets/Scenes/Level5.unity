@@ -5577,13 +5577,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bde5dfd9c68d34485b476072cf434d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 3538236896609708047, guid: 843462f093fa8bc4697bf048e100c465, type: 3}
+  playerPrefab:
+  - {fileID: 8629285478399288226, guid: ec017b19284af5a40b1a84b97093c839, type: 3}
+  - {fileID: 616505969948932047, guid: 66c42f3139bd5fb46b711c26e290b9fa, type: 3}
   spawnPoints:
   - {fileID: 1560318249}
   - {fileID: 1695744400}
   count: 3
   countDisplay: {fileID: 918246401}
-  Animing: {fileID: 7367533376514859453, guid: 4a1f917992257334f9bc739cdd479442, type: 3}
 --- !u!1 &1603955715
 GameObject:
   m_ObjectHideFlags: 0
