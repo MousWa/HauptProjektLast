@@ -210,11 +210,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         currentHelath -= Damage;
         healthbarImage.fillAmount = currentHelath / maxHealth;
 
-        if (currentHelath <= 0)
-        {
-            Die();
-        }
-      
+        
     }
     
   /*  [PunRPC]
