@@ -691,6 +691,7 @@ MonoBehaviour:
   MaxSpeed: 0.2
   firePoint: {fileID: 6429195629953810540}
   Damage: 10
+  AimingC: {fileID: 7367533376514859453, guid: 4a1f917992257334f9bc739cdd479442, type: 3}
 --- !u!114 &7864396687912986935
 MonoBehaviour:
   m_ObjectHideFlags: 0

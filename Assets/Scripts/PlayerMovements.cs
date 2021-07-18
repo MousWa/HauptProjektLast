@@ -35,14 +35,16 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     const float maxHealth = 100f;
     float currentHelath= maxHealth;
     public float Damage;
-  
+    public GameObject AimingC;
 
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
-     
+        PhotonNetwork.Instantiate(AimingC.name, targtPos, Quaternion.identity);
+
+
 
 
     }
