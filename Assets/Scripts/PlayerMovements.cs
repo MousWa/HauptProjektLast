@@ -124,7 +124,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (Input.GetButton("Fire1") && shootingTimer <= 0.0 )
         {
             
-            shootingTimer = 0.2f;
+            shootingTimer = 0.5f;
             photonView.RPC("Fire", RpcTarget.All);
         }
 
