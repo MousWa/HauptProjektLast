@@ -139,7 +139,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
                 IsGrounded = true;
             }
-            if (c.gameObject.tag == "Bullet")
+            if (c.gameObject.tag == "Bullet"&&!photonView.IsMine)
             {
               
                 pv.RPC("RPCTakeDamage", RpcTarget.All);
