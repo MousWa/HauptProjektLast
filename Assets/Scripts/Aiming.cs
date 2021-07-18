@@ -7,9 +7,14 @@ public class Aiming : MonoBehaviourPunCallbacks, IPunObservable
 {
     // Start is called before the first frame update
    public static Vector2 targtPos;
-  
+   public GameObject AimingC;
 
     // Update is called once per frame
+
+    void Start()
+    {
+        PhotonNetwork.Instantiate(AimingC.name, targtPos, Quaternion.identity);
+    }
     void Update()
     {
         if (photonView.IsMine)
@@ -17,6 +22,7 @@ public class Aiming : MonoBehaviourPunCallbacks, IPunObservable
 
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = targtPos;
+            
 
         }
         
