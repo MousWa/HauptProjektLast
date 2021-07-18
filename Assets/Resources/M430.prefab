@@ -720,6 +720,7 @@ MonoBehaviour:
   MovementSpeed: 2
   MaxSpeed: 0.2
   firePoint: {fileID: 5896776111878318469}
+  maxHealth: 100
   Damage: 30
   AimingC: {fileID: 7367533376514859453, guid: 4a1f917992257334f9bc739cdd479442, type: 3}
 --- !u!114 &7336199845053448414

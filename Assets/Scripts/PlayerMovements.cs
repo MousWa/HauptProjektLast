@@ -32,13 +32,14 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     public Transform firePoint;
     private float rotation = 0.0f;
     private float acceleration = 0.0f;
-    const float maxHealth = 100f;
-    float currentHelath= maxHealth;
+    public  float maxHealth ;
+      float currentHelath;
     public float Damage;
     public GameObject AimingC;
 
     private void Start()
     {
+        currentHelath = maxHealth;
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
