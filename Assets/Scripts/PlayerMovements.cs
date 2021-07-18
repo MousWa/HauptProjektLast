@@ -52,11 +52,21 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
     private void Update()
     {
-        if (currentHelath <= 0)
+        if (currentHelath <= 0f)
         {
-            pv.RPC("Die", RpcTarget.Others);
-            
+
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(5))
+            {
+                PhotonNetwork.LoadLevel(7);
+            }
+            else
+            {
+                Destroy(gameObject);
+                PhotonNetwork.LoadLevel("Edit");
+            }
+
         }
+
         Debug.Log(currentHelath);
         
         if (photonView.IsMine)
@@ -207,7 +217,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
       
     }
     
-    [PunRPC]
+  /*  [PunRPC]
     void Die()
     {
         if (currentHelath <= 0f )
@@ -226,7 +236,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             }
         
     }
-    /*
+    
     [PunRPC]
     void pisolRotationPUN()
     {
