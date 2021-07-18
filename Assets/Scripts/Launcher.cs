@@ -109,6 +109,10 @@ public class Launcher : MonoBehaviourPunCallbacks
 		MenuManager.Instance.OpenMenu("loading");
 	}
 
+	public void QuitGame( )
+	{
+		Application.Quit();
+	}
 	public override void OnLeftRoom()
 	{
 		MenuManager.Instance.OpenMenu("title");
