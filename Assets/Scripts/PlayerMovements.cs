@@ -52,13 +52,19 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     }
     private void Update()
     {
+        if (currentHelath <= 0)
+        {
+            pv.RPC("Die", RpcTarget.Others);
+            
+        }
         Debug.Log(currentHelath);
         
         if (photonView.IsMine)
         {
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ProcessInputs();
-            
+          
+
 
         }
         else
