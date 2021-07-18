@@ -20,7 +20,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private Rigidbody2D rb;
     private Vector3 smoothMove;
     public SpriteRenderer gun;
-    public static bool isRotat = false;
+    private bool isRotat = false;
     public GameObject BulletPrefab;
     private Transform aimTrans;
     private Vector3 targtPos;
@@ -87,8 +87,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (Input.GetKeyDown(KeyCode.A)) {
             if (!isRotat&&photonView.IsMine)
             { 
-                //transform.Rotate(new Vector3(0, 180, 0));
-                //isRotat = true;
+                transform.Rotate(new Vector3(0, 180, 0));
+                isRotat = true;
                 pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
             }
         }
@@ -96,8 +96,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             if (isRotat && photonView.IsMine)
             {
-             //   transform.Rotate(new Vector3(0, 180, 0));
-                //isRotat = false;
+                transform.Rotate(new Vector3(0, 180, 0));
+                isRotat = false;
                 pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
             }
         }
