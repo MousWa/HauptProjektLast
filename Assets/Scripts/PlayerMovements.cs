@@ -139,7 +139,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             {
                 IsGrounded = true;
             }
-            if (c.gameObject.tag == "Bullet"&&!photonView.IsMine)
+            if (c.gameObject.tag == "Bullet")
             {
               
                 pv.RPC("RPCTakeDamage", RpcTarget.All);
@@ -183,13 +183,14 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
       
         rb.AddForce(Vector2.up * jumpforce);
     }
-   
 
-   
+
+
     [PunRPC]
     public void RPCTakeDamage()
     {
-   
+
+        if (pv.IsMine) { 
         currentHelath -= Damage;
         healthbarImage.fillAmount = currentHelath / maxHealth;
 
@@ -197,6 +198,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             Die();
         }
+       }
     }
     
     [PunRPC]
