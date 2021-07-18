@@ -18,7 +18,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 	[SerializeField] Transform playerListContent;
 	[SerializeField] GameObject PlayerListItemPrefab;
 	[SerializeField] GameObject startGameButton;
-
+	[SerializeField] GameObject QuitGameButton;
 	void Awake()
 	{
 		Instance = this;
