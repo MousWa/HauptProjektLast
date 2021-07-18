@@ -5,7 +5,7 @@ using Photon.Pun;
 using UnityEngine.UI;
 public class SpawnPlayer : MonoBehaviour
 {
-    public GameObject playerPrefab;
+    public GameObject[] playerPrefab;
     public GameObject[] spawnPoints;
     public int count;
     public Text countDisplay;
@@ -40,14 +40,14 @@ public class SpawnPlayer : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             Vector2 spawnPoint1 = spawnPoints[0].GetComponent<Transform>().position;
-            PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint1, Quaternion.identity);
+            PhotonNetwork.Instantiate(playerPrefab[0].name, spawnPoint1, Quaternion.identity);
             
         }
 
         else
         {
             Vector2 spawnPoint2 = spawnPoints[1].GetComponent<Transform>().position;
-            PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint2, Quaternion.identity);
+            PhotonNetwork.Instantiate(playerPrefab[1].name, spawnPoint2, Quaternion.identity);
             
         }
     }
