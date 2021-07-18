@@ -33,7 +33,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private float rotation = 0.0f;
     private float acceleration = 0.0f;
     const float maxHealth = 100f;
-    float currentHelath = maxHealth;
+    float currentHelath ;
     public float Damage;
   
 
@@ -49,7 +49,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
-       
+        currentHelath = 100;
 
 
     }
@@ -135,17 +135,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         direction = (targtPos - bulletpos).normalized;
         //bulletrb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
         bullet.GetComponent<Rigidbody2D>().AddForceAtPosition(direction * buzlletSpeed, targtPos);
-        /** Use this if you want to fire two bullets at once **/
-        //Vector3 baseX = rotation * Vector3.right;
-        //Vector3 baseZ = rotation * Vector3.forward;
 
-        //Vector3 offsetLeft = -1.5f * baseX - 0.5f * baseZ;
-        //Vector3 offsetRight = 1.5f * baseX - 0.5f * baseZ;
 
-        //bullet = Instantiate(BulletPrefab, rigidbody.position + offsetLeft, Quaternion.identity) as GameObject;
-        //bullet.GetComponent<Bullet>().InitializeBullet(photonView.Owner, baseZ, Mathf.Abs(lag));
-        //bullet = Instantiate(BulletPrefab, rigidbody.position + offsetRight, Quaternion.identity) as GameObject;
-        //bullet.GetComponent<Bullet>().InitializeBullet(photonView.Owner, baseZ, Mathf.Abs(lag));
     }
     
     void OnCollisionEnter2D(Collision2D c)
@@ -200,23 +191,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
       
         rb.AddForce(Vector2.up * jumpforce);
     }
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if(stream.IsWriting)
-        {
-            stream.SendNext(transform.position);
-            stream.SendNext(targtPos);
-            stream.SendNext(currentHelath);
-
-        }
-        else if (stream.IsReading)
-        {
-            smoothMove = (Vector3)stream.ReceiveNext();
-            targtPos = (Vector3)stream.ReceiveNext();
-            currentHelath= (float)stream.ReceiveNext(); ;
-
-        }
-    }
+   
 
    
     [PunRPC]
@@ -311,5 +286,23 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     {
         Vector3 worldPosition = main.ScreenToWorldPoint(mousePosition);
         return worldPosition;
+    }
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+            stream.SendNext(targtPos);
+            stream.SendNext(currentHelath);
+
+        }
+        else if (stream.IsReading)
+        {
+            smoothMove = (Vector3)stream.ReceiveNext();
+            targtPos = (Vector3)stream.ReceiveNext();
+            currentHelath = (float)stream.ReceiveNext();
+
+
+        }
     }
 }
