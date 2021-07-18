@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using System;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
 {
 
@@ -204,14 +204,21 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     void Die()
     {
-            if (currentHelath <= 0f)
+        if (currentHelath <= 0f )
             {
-            
-            
-                Destroy(gameObject);
-                
-             //   PhotonNetwork.LoadLevel(2);
+
+            if(SceneManager.GetActiveScene() != SceneManager.GetSceneByBuildIndex(5))
+                {
+                PhotonNetwork.LoadLevel(7);
             }
+            else
+            {
+
+            }
+                Destroy(gameObject);
+                PhotonNetwork.LoadLevel("Edit");
+            }
+        
     }
     /*
     [PunRPC]
