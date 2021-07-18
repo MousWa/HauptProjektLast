@@ -278,6 +278,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             stream.SendNext(targtPos);
             stream.SendNext(currentHelath);
             stream.SendNext(isRotat);
+            stream.SendNext(IsGrounded);
 
         }
         else if (stream.IsReading)
@@ -286,6 +287,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             targtPos = (Vector3)stream.ReceiveNext();
             currentHelath = (float)stream.ReceiveNext();
             isRotat = (bool)stream.ReceiveNext();
+            IsGrounded = (bool)stream.ReceiveNext();
 
         }
     }
