@@ -60,8 +60,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (photonView.IsMine)
         {
             targtPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            ProcessInputs(); 
-
+            ProcessInputs();
+            pv.RPC("pisolRotationPUN", RpcTarget.Others);
 
         }
         else
@@ -87,8 +87,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         if (Input.GetKeyDown(KeyCode.A)) {
             if (!isRotat&&photonView.IsMine)
             { 
-                transform.Rotate(new Vector3(0, 180, 0));
-                isRotat = true;
+                //transform.Rotate(new Vector3(0, 180, 0));
+                //isRotat = true;
                 pv.RPC("OnDirectionChange_Left", RpcTarget.Others);
             }
         }
@@ -96,8 +96,8 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         {
             if (isRotat && photonView.IsMine)
             {
-                transform.Rotate(new Vector3(0, 180, 0));
-                isRotat = false;
+             //   transform.Rotate(new Vector3(0, 180, 0));
+                //isRotat = false;
                 pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
             }
         }
@@ -248,7 +248,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
     }
 
-    void pisolRotation()
+  /*  void pisolRotation()
     {
 
         Vector3 mousePosition = GetMousPosition();
@@ -267,7 +267,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Debug.Log(angle);
         }
         pv.RPC("pisolRotationPUN", RpcTarget.Others);
-    }
+    }*/
 
     public static Vector3 GetMousPosition()
     {
