@@ -683,7 +683,7 @@ MonoBehaviour:
   pv: {fileID: 3694496394262800297}
   moveSpeed: 3
   jumpforce: 300
-  buzlletSpeed: 3000
+  buzlletSpeed: 700
   gun: {fileID: 0}
   BulletPrefab: {fileID: 8041456036969282224, guid: eaf19a7630ae906468e2a4829b63f29b, type: 3}
   RotationSpeed: 90
