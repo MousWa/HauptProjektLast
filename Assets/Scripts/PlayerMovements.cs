@@ -42,9 +42,11 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
-        PhotonNetwork.Instantiate(AimingC.name, targtPos, Quaternion.identity);
+        if (photonView.IsMine)
+        {
+            PhotonNetwork.Instantiate(AimingC.name, targtPos, Quaternion.identity);
 
-
+        }
 
 
     }
