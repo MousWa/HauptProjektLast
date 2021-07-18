@@ -33,7 +33,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     private float rotation = 0.0f;
     private float acceleration = 0.0f;
     const float maxHealth = 100f;
-    float currentHelath ;
+    float currentHelath= maxHealth;
     public float Damage;
   
 
@@ -49,7 +49,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         sp = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         pv = GetComponent<PhotonView>();
-        currentHelath = 100;
+     
 
 
     }
@@ -198,11 +198,11 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     public void RPCTakeDamage()
     {
-        if (!pv.IsMine)
-        {
-            healthbarImage.fillAmount = currentHelath / maxHealth;
+   //     if (!pv.IsMine)
+     //   {
+       //     healthbarImage.fillAmount = currentHelath / maxHealth;
             
-        }
+        //}
         currentHelath -= Damage;
         healthbarImage.fillAmount = currentHelath / maxHealth;
 
