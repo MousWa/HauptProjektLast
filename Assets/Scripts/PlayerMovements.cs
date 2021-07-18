@@ -101,7 +101,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
                 pv.RPC("OnDirectionChange_Right", RpcTarget.Others);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) /*&& IsGrounded*/)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded)
         {
             Jump();
         }
@@ -123,14 +123,12 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
     [PunRPC]
     public void Fire()
     {
-        
+
 
         GameObject bullet;
-        /** Use this if you want to fire one bullet at a time **/
         bullet= Instantiate(BulletPrefab, firePoint.position, Quaternion.identity);
         Vector3 bulletpos = bullet.GetComponent<Transform>().position;
         direction = (targtPos - bulletpos).normalized;
-        //bulletrb.AddForceAtPosition(direction*buzlletSpeed, targtPos) ;
         bullet.GetComponent<Rigidbody2D>().AddForceAtPosition(direction * buzlletSpeed, targtPos);
 
 
@@ -203,17 +201,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Die();
         }
     }
-    void die()
-    {
-        if (currentHelath <= 0f)
-        {
-
-
-            //Destroy(gameObject);
-
-            //PhotonNetwork.LoadLevel(2);
-        }
-    }
+    
     [PunRPC]
     void Die()
     {
@@ -226,7 +214,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
              //   PhotonNetwork.LoadLevel(2);
             }
     }
-    
+    /*
     [PunRPC]
     void pisolRotationPUN()
     {
@@ -248,7 +236,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         }
     }
 
-  /*  void pisolRotation()
+    void pisolRotation()
     {
 
         Vector3 mousePosition = GetMousPosition();
@@ -267,7 +255,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             Debug.Log(angle);
         }
         pv.RPC("pisolRotationPUN", RpcTarget.Others);
-    }*/
+    }
 
     public static Vector3 GetMousPosition()
     {
@@ -281,6 +269,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
         Vector3 worldPosition = main.ScreenToWorldPoint(mousePosition);
         return worldPosition;
     }
+    */
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)
@@ -288,6 +277,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             stream.SendNext(transform.position);
             stream.SendNext(targtPos);
             stream.SendNext(currentHelath);
+            stream.SendNext(isRotat);
 
         }
         else if (stream.IsReading)
@@ -295,7 +285,7 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             smoothMove = (Vector3)stream.ReceiveNext();
             targtPos = (Vector3)stream.ReceiveNext();
             currentHelath = (float)stream.ReceiveNext();
-
+            isRotat = (bool)stream.ReceiveNext();
 
         }
     }
