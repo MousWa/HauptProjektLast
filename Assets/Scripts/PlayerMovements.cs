@@ -213,10 +213,10 @@ public class PlayerMovements : MonoBehaviourPunCallbacks,IPunObservable
             }
             else
             {
-
-            }
                 Destroy(gameObject);
                 PhotonNetwork.LoadLevel("Edit");
+            }
+              
             }
         
     }
