@@ -15,7 +15,7 @@ MonoBehaviour:
   AppSettings:
     AppIdRealtime: 30eb3128-5347-45df-ac57-814cbc6dfbff
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: 3cae1b06-f255-42a3-9740-2342144acf59
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -46,6 +46,9 @@ MonoBehaviour:
   - RPCTakeDamage
   - Die
   - OnCollisionEnter2D
+  - CantHearYou
+  - ChangeColour
+  - HeresWhy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

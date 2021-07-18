@@ -1271,6 +1271,10 @@ namespace Photon.Realtime
 
         /// <summary>Disconnects the peer from a server or stays disconnected. If the client / peer was connected, a callback will be triggered.</summary>
         /// <remarks>
+        /// Disconnect will attempt to notify the server of the client closing the connection.
+        /// 
+        /// Clients that are in a room, will leave the room. If the room's playerTTL &gt; 0, the player will just become inactive (and may rejoin).
+        /// 
         /// This method will not change the current State, if this client State is PeerCreated, Disconnecting or Disconnected.
         /// In those cases, there is also no callback for the disconnect. The DisconnectedCause will only change if the client was connected.
         /// </remarks>
@@ -2646,6 +2650,7 @@ namespace Photon.Realtime
                                 case ErrorCode.MaxCcuReached:
                                     this.DisconnectedCause = DisconnectCause.MaxCcuReached;
                                     break;
+                                case ErrorCode.InvalidOperation:
                                 case ErrorCode.OperationNotAllowedInCurrentState:
                                     this.DisconnectedCause = DisconnectCause.OperationNotAllowedInCurrentState;
                                     break;
